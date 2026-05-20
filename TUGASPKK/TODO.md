@@ -1,15 +1,9 @@
-# TODO - Perbaikan hapus produk keranjang
+# TODO 
 
-- [x] (2026-05-19) Periksa bug pada `proses_keranjang.php` saat aksi `hapus`.
-- [x] Ubah variabel dari `$id_produk` menjadi `$id_keranjang` pada blok `aksi=hapus`.
-
-
-- [x] Tambahkan validasi integer untuk parameter `id` sebelum memanggil query hapus.
-
-- [x] Pastikan redirect kembali ke `keranjang.php` berjalan.
-
-
-- [ ] Tes manual: buka `keranjang.php`, klik `Hapus`, verifikasi item hilang.
-
-
-
+[ ] Buat about us
+[ ] Buat tampilan about us
+[ ] Buat fungsi search bar
+[ ] Buat tampilan seacrh bar
+[ ] Buat Laporan transaksi di halaman admin
+[ ] Buat tampilan laporan transaksi
+[ ] Cari bug pada setiap file
