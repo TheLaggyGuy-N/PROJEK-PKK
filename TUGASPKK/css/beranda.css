@@ -1,0 +1,480 @@
+/* ==========================================================================
+   1. IMPORT FONT & RESET DASAR (Berlaku untuk Semua Ukuran Layar)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #eb7afa 0%, #f7e9fa 50%, #f0e3ff 100%);
+    background-attachment: fixed;
+    color: #4a3b4e;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGASI (Default / Tampilan Laptop)
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(220, 180, 230, 0.2);
+}
+
+.brand-name {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: #bc7cb4;
+}
+
+.search-container {
+    flex: 0 1 900px;
+    margin: 0 20px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 20px;
+    border: 2px solid #f0d5f7;
+    border-radius: 25px;
+    background-color: #fff;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #bc7cb4;
+    box-shadow: 0 0 8px rgba(188, 124, 180, 0.3);
+}
+
+.nav-action-group {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Menu Navigasi Link Lama (icon-group jika masih ada) */
+.icon-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.icon-group a {
+    text-decoration: none;
+    color: #6a536e;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.icon-group a:hover {
+    color: #bc7cb4;
+    background-color: #fff0fcf5;
+    transform: translateY(-2px);
+}
+
+/* --- TOMBOL AUTH & KERANJANG --- */
+.auth-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-auth {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.btn-masuk {
+    color: #bc7cb4;
+    border: 2px solid #bc7cb4;
+    background-color: transparent;
+}
+
+.btn-masuk:hover { background-color: #fff0fcf5; }
+
+.btn-daftar {
+    color: #ffffff;
+    background-color: #bc7cb4;
+    border: 2px solid #bc7cb4;
+}
+
+.btn-daftar:hover {
+    background-color: #a3659b;
+    border-color: #a3659b;
+}
+
+.cart-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.cart-link:hover { transform: scale(1.1); }
+
+.cart-icon {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+/* --- KOTAK PROFIL USER (SUDAH LOGIN) --- */
+.user-profile-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 14px;
+    background: #ffffff;
+    border: 1px solid #f0d5f7;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.user-profile-card:hover { box-shadow: 0 4px 12px rgba(188, 124, 180, 0.15); }
+
+.profile-avatar img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #f5e1f7;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-info { display: flex; flex-direction: column; }
+.user-greeting { font-size: 13px; font-weight: 700; color: #4a3b4e; }
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background-color: #ffffff;
+    min-width: 150px;
+    box-shadow: 0 8px 24px rgba(74, 59, 78, 0.12);
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 100;
+    border: 1px solid #fbf0fc;
+}
+
+.profile-dropdown a {
+    color: #4a3b4e;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.profile-dropdown a:hover { background-color: #fff0fcf5; color: #bc7cb4; }
+.user-profile-card:hover .profile-dropdown { display: block; }
+
+/* ==========================================================================
+   3. BANNER & LAYOUT PRODUK (Default / Tampilan Laptop)
+   ========================================================================== */
+.banner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.banner img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(188, 124, 180, 0.15);
+}
+
+.admin-panel {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    border-left: 5px solid #bc7cb4;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Fredoka', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    color: #5c4661;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 0px #ffffff;
+    position: relative;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 4px;
+    background: #bc7cb4;
+    border-radius: 10px;
+    margin: 8px auto 0 auto;
+    opacity: 0.6;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(188, 124, 180, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #fbf0fc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(188, 124, 180, 0.18);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 { font-size: 18px; color: #4a3b4e; margin-bottom: 8px; }
+.price { font-weight: 700; color: #bc7cb4; font-size: 16px; margin-bottom: 5px; }
+.stock { font-size: 13px; color: #8a768e; margin-bottom: 15px; }
+
+/* --- BUTTONS & INPUTS --- */
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-cart { background-color: #bc7cb4; color: white; }
+.btn-cart:hover { background-color: #a3659b; }
+.btn-detail { background-color: #f5e1f7; color: #bc7cb4; }
+.btn-detail:hover { background-color: #ebd0f0; }
+.btn-danger { background-color: #ffb3b3; color: #d63031; }
+
+.qty-input {
+    width: 60px;
+    padding: 6px;
+    border: 2px solid #f0d5f7;
+    border-radius: 8px;
+    text-align: center;
+    margin-right: 5px;
+    outline: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(74, 59, 78, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close:hover { color: #bc7cb4; }
+
+.modal-content img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================================================
+   4. HALAMAN KERANJANG KHUSUS (Tampilan Vertikal List)
+   ========================================================================== */
+
+.cart-list-container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.cart-item-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 12px rgba(188, 124, 180, 0.06);
+    border: 1px solid #fbf0fc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    transition: transform 0.2s ease;
+}
+
+.cart-item-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 6px 16px rgba(188, 124, 180, 0.12);
+}
+
+.cart-item-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.cart-item-info img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cart-item-details h3 {
+    font-size: 16px;
+    color: #4a3b4e;
+}
+
+.cart-item-meta {
+    font-size: 12px;
+    color: #8a768e;
+}
+
+.cart-item-pricing {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.cart-qty-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a3b4e;
+    background: #fff0fcf5;
+    padding: 4px 12px;
+    border-radius: 8px;
+}
+
+.cart-subtotal-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #bc7cb4;
+    min-width: 110px;
+    text-align: right;
+}
+
+.btn-delete-cart {
+    background-color: #ffb3b3;
+    color: #d63031;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn-delete-cart:hover {
+    background-color: #ff9999;
+}
